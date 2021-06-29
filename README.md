@@ -5,4 +5,6 @@
 - Install RStudio  
   Eg. [Windows](https://www.rstudio.com/products/rstudio/download/#download)  
 - Install Shiny  
-  At R session > install.packages("shiny")
+  At R session > install.packages("shiny")  
+- Install shinythemes  
+  At R session > install.packages("shinythemes")

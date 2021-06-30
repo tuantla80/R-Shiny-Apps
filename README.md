@@ -6,5 +6,8 @@
   Eg. [Windows](https://www.rstudio.com/products/rstudio/download/#download)  
 - Install Shiny  
   At R session > install.packages("shiny")  
-- Install shinythemes  
-  At R session > install.packages("shinythemes")
+- Install shinythemes, ggplot2, DT (DataTable)  
+  At R session  
+  > install.packages("shinythemes")  
+  > install.packages("ggplot2")  
+  > install.packages('DT')

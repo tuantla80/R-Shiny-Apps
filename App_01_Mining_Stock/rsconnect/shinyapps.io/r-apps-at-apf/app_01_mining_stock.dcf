@@ -1,0 +1,11 @@
+name: app_01_mining_stock
+title:
+username:
+account: r-apps-at-apf
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4340562
+bundleId: 4775276
+url: https://r-apps-at-apf.shinyapps.io/app_01_mining_stock/
+when: 1625104192.83139
+lastSyncTime: 1625104192.83139

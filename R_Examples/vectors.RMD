@@ -40,4 +40,59 @@ x3
 x_except_index_3 = x[-3]
 x_except_index_3
 ```
+<!--NA ‘Not Available’ / Missing Values  
+ At console >?NA   can see the documentation of NA
+-->
+```{r}
+x <- c(20.7, NA, 10)
+x
+```
+<!-- Check NA:  is.na(a_value), anyNA(a_vector) -->
+```{r}
+value1 = 'test'
+print(is.na(value1))
+
+value2 = NA
+print(is.na(value2))
+
+print(anyNA(c(10, "test", 90.1)))
+```
+<!-- Coercion / casting -->
+```{r}
+xx <- c(10, 20.9, 'aa')  # coercion to character type (string)
+xx
+```
+```{r}
+xx <- c(TRUE, 9, FALSE)  # coercion to integer. TRUE: 1, FALSE: 0
+xx
+```
+```{r}
+xx <- c(TRUE, 'a', 9, FALSE)  # coercion to character type (string). 
+                              #TRUE: "TRUE", FALSE: "FALSE"
+xx
+```
+```{r}
+xx <- c(as.character(10), as.character(as.numeric(TRUE)), 'aa') # explicit way 
+xx
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -1,0 +1,56 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+<!-- At console: ?matrix -->
+```{r}
+matrix(data = c(1, 2, 3, 4, 5, 6), nrow = 2, ncol = 3, 
+       byrow = TRUE  # fill data by row
+       )
+```
+```{r}
+matrix(data = c(1, 2, 3, 4, 5, 6), nrow = 2, ncol = 3, 
+       byrow = FALSE  # fill data by column
+       ) -> m  # save this matrix as m
+m
+```
+```{r}
+dim(m)
+```
+```{r}
+mm <- 1:6  # a vector 1, 2, 3, 4, 5, 6
+dim(mm) <- c(2, 3)
+mm
+#       [,1] [,2] [,3]
+# [1,]    1    3    5
+# [2,]    2    4    6
+```
+
+```{r}
+print(m[2, 3])  # access to row and column
+print(m[ , 3])  # access all rows at column 3
+print(m[1, ])   # access all columns at row 1
+```
+<!-- Create matrix from vectors -->
+```{r}
+x1 = c(1, 2, 3)
+x2 = c(4, 5, 6)
+x12 = cbind(x1, x2)   # column binding
+print(x12)
+print(colnames(x12))
+print(rownames(x12))
+```
+
+```{r}
+x1 = c(1, 2, 3)
+x2 = c(4, 5, 6)
+x12 = rbind(x1, x2)  # row binding
+print(x12)
+print(colnames(x12))
+print(rownames(x12))
+colnames(x12) <- c('a', 'b', 'c')
+print("----------")
+print(x12)
+print(colnames(x12))
+print(rownames(x12))
+```

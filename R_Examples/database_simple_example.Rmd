@@ -22,8 +22,4 @@ ind_code <- db$find('{"individualCode" : "APO180"}')
 print(ind_code)
 ```
 
-```{r}
-dbDisconnect(con)
-```
-
 

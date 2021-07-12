@@ -1,0 +1,29 @@
+---
+# install.packages("mongolite")
+# https://jeroen.github.io/mongolite/query-data.html#query-syntax
+# install.packages("DBI")
+# install.packages("RPostgres")
+---
+```{r}
+library(mongolite) 
+# library(DBI)
+```
+```{r}
+# Connect to the database and the desired collection as root:
+db <- mongo(collection = "markers", 
+            db = "facs",
+            url = "mongodb://localhost:27017"
+            )
+db$count('{}')
+```
+
+```{r}
+ind_code <- db$find('{"individualCode" : "APO180"}')
+print(ind_code)
+```
+
+```{r}
+dbDisconnect(con)
+```
+
+

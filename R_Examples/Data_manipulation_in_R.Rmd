@@ -1,0 +1,80 @@
+<!-- 1. Pipe operator -->
+```{r}
+library(magrittr)
+```
+```{r}
+1:10 %>% mean()  # === mean(1:10)
+```
+```{r}
+1:10 %>% mean() %>% floor() # === floor(mean(1:10))
+```
+```{r}
+1:10 %>%                  # array
+   mean(na.rm=FALSE) %>%  # mean
+   floor()  %>%           # floor
+   print()
+```
+```{r}
+'Hello' %>%
+   paste(" World")
+```
+<!-- 2. filter 
+   filter    -> selecting rows
+   select    -> selecting cols
+   mutate    -> add/change cols
+   arrange   -> order rows
+   summarize -> make summary
+-->
+```{r}
+library(dplyr)
+```
+```{r}
+starwars  # a dataframe
+# Access cols. Eg. starwars['eye_color'] return single column dataframe
+#                  starwars[['eye_color']] (or starwars$eye_color) return a vector 
+```
+```{r}
+# starwars[['eye_color']] %>% class()
+starwars[['eye_color']] %>% unique()
+```
+```{r}
+# Select rows where eye_color = black
+starwars  %>% 
+   filter(eye_color == "black")  # NOTE: not use filter("eye_color" == "black") 
+```
+```{r}
+# Select rows where ...
+starwars  %>% 
+   filter(eye_color == "black" & skin_color == "green") 
+
+# Equivalent to
+starwars  %>% 
+   filter(eye_color == "black")  %>% 
+   filter(skin_color == "green")
+```
+<!-- 3. select: selecting cols -->
+```{r}
+colnames(starwars)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

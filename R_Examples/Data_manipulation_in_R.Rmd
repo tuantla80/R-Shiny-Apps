@@ -56,6 +56,11 @@ starwars  %>%
 ```{r}
 colnames(starwars)
 ```
+```{r}
+starwars %>%
+  select(2:5)
+
+```
 
 
 

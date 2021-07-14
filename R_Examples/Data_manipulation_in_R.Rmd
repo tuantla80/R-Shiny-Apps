@@ -52,18 +52,70 @@ starwars  %>%
    filter(eye_color == "black")  %>% 
    filter(skin_color == "green")
 ```
-<!-- 3. select: selecting cols -->
+<!-- 3. select: selecting cols 
+Helper functions: starts_with(), ends_with(), contains(), where()
+-->
 ```{r}
 colnames(starwars)
 ```
 ```{r}
 starwars %>%
-  select(2:5)
+  select(2:7)
 
 ```
 
+```{r}
+starwars %>%
+  select(c(1, 3, 5, 7))
 
+starwars %>%
+  select(c(7, 5, 3, 1))
+```
+```{r}
+which(colnames(starwars) == 'hair_color')
+```
+```{r}
+starwars %>%
+  select(which(colnames(starwars) == 'height'): which(colnames(starwars) == 'birth_year'))
 
+# Equivalent to
+starwars %>%
+  select(which(colnames(.) == 'height'): which(colnames(.) == 'birth_year'))
+
+# Equivalent to
+starwars %>%
+  select(height: birth_year)
+
+# Remove hair_color columns
+starwars %>%
+  select(height: birth_year, -hair_color)
+```
+```{r}
+# everything() means all columns
+df_tmp <- starwars %>%
+  select(everything())
+
+waldo::compare(df_tmp, starwars)
+```
+```{r}
+# get cols from height: birth_year and everything else
+starwars %>%
+  select(height: birth_year, everything())  # 
+```
+```{r}
+starwars %>%
+  select(ends_with('_color')) 
+```
+
+```{r}
+starwars %>%
+  select(where(is.integer))  # choose only integer columns
+                             # similarly: is.character
+```
+```{r}
+starwars %>%
+  select(!(c(height, birth_year)))  # choose all columns except height and birth_year
+```
 
 
 

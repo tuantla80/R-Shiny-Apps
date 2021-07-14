@@ -116,7 +116,36 @@ starwars %>%
 starwars %>%
   select(!(c(height, birth_year)))  # choose all columns except height and birth_year
 ```
+<!-- Mutate: To add/change columns -->
+```{r}
+starwars %>%
+  mutate(bmi = mass / ((height/100) ^2)) %>%  # Calculate column. BMI = mass/height [kg/m2]
+  select(name, mass, height, bmi)  %>% 
+  mutate(bmi = round(bmi, 2))                 # Change value of column
 
+# Equivalent to
+starwars %>%
+  mutate(bmi = mass / ((height/100) ^2),
+         bmi = round(bmi, 2)) %>% 
+  select(name, mass, height, bmi) 
+ 
+```
+```{r}
+starwars %>%
+  select(name, homeworld, species)  %>%
+  mutate(homeworld = as.factor(homeworld),
+         species = as.factor(species))
+
+# Equivalent to
+starwars %>%
+  select(name, homeworld, species)  %>%
+  mutate(across(c(homeworld, species), as.factor))
+
+# Equivalent to
+starwars %>%
+  select(name, homeworld, species)  %>%
+  mutate(across(!name, as.factor))
+```
 
 
 

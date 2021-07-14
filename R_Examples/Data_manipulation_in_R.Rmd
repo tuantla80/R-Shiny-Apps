@@ -6,7 +6,8 @@
   arrange   -> order rows
   summarize -> make summary
   group_by
-  data pivoting
+  data pivoting: tydyr lib: pivot_longer (it is pivot in some languages) 
+                            pivot_wider  (it is un-pivot sin some languages)
   string manipulation
   Web scraping
   Json parsing
@@ -191,7 +192,56 @@ starwars %>%
   filter(num_rows > 1) %>%  # filter rows
   arrange(mean)   # asc sort mean column
 ```
+<!-- 6. Pivot table: (change columns to rows) -->
+```{r}
+library(tidyr)
 
+df <- tibble::tribble(
+  ~Student, ~Test1, ~Test2,
+ #--------/-------/-------
+ 'John',      'B',    NA,
+ 'Bob',        'A',   'C',
+ 'Adam',       'F', 'B'
+)
+df
+```
+```{r}
+df_pivot <- pivot_longer(df, -Student, names_to = 'Assessment', values_to = 'Grade')
+df_pivot
+```
+```{r}
+df_unpivot <- pivot_wider(df_pivot, id_cols='Student', names_from = 'Assessment', values_from = 'Grade')
+df_unpivot  #in fact, it is df
+```
+```{r}
+waldo::compare(df, df_unpivot)
+```
+```{r}
+relig_income
+```
+```{r}
+relig_income_pivot <- pivot_longer(relig_income, -religion, names_to = 'income', values_to = 'count')
+relig_income_pivot
+```
+```{r}
+billboard
+```
+```{r}
+billboard_pivot = billboard %>%
+  pivot_longer(
+    cols = starts_with('wk'),
+    names_to = 'Week',
+    values_to = 'rank'
+  )
+billboard_pivot
+```
+```{r}
+billboard_pivot %>%
+  group_by(track) %>%
+  summarize(highest_rank = min(rank, na.rm = TRUE)) %>%
+  arrange(highest_rank) # %>%
+  # View()  # view as a seperate table in UI
+```
 
 
 

@@ -8,9 +8,9 @@
   group_by
   data pivoting: tydyr lib: pivot_longer (it is pivot in some languages) 
                             pivot_wider  (it is un-pivot sin some languages)
-  string manipulation
-  Web scraping
-  Json parsing
+  string manipulation: stringr lib
+  Json parsing: jsonlite lib: toJSON() and fromJSON()
+  Web scraping: rvest lib
 -->
 
 <!-- 1. Pipe operator -->
@@ -242,6 +242,90 @@ billboard_pivot %>%
   arrange(highest_rank) # %>%
   # View()  # view as a seperate table in UI
 ```
+<!-- 7. String manipulation -->
+
+```{r}
+library(stringr)
+str_length("Hello")
+str_sub("Hello", 2, 4)
+
+x = c('Hello', 'hi')
+str_sub(x, 2, 4)
+```
+```{r}
+str_detect(x, "i")
+str_detect(x, "^H")  # regex:  ^ start with 
+str_detect(x, "i$")  # regex:  $ end with 
+```
+```{r}
+str_extract(x, "ll")
+```
+```{r}
+string = 'Hello World! Hell yeah'
+str_replace(string, 'll', 'XX')
+```
+```{r}
+string = 'Hello World! Hell yeah'
+str_replace_all(string, 'll', 'XX')
+```
+```{r}
+tmp <- str_split('this, is, a, test', ",") %>%
+       unlist()
+tmp  
+```
+```{r}
+str_trim(tmp)  # remove leading and trailing empty
+               # str_squish() will remove all empty 
+```
+```{r}
+str_pad('Hello', 10, side='right')  
+str_pad('Hello', 10, side='both', pad='-')  
+```
+<!-- 8. Json -->
+```{r}
+library(jsonlite)
+```
+```{r}
+mtcars
+```
+```{r}
+mtcars_json <- toJSON(mtcars)  # may add: pretty=TRUE
+mtcars_json
+```
+```{r}
+# change json to R object
+fromJSON(mtcars_json)
+```
+```{r}
+all.equal(mtcars, fromJSON(mtcars_json))
+```
+```{r}
+json_example <- '["test1", "test2"]'
+json_example
+```
+
+
+```{r}
+fromJSON(json_example)  # a vector
+```
+```{r}
+fromJSON(json_example, simplifyVector = FALSE)  # a list
+```
+<!-- 9. Web scraping: Similar to beatifulsoup in Python -->
+```{r}
+library(rvest)
+```
+```{r}
+url <- "https://www.imdb.com/chart/top"
+top_movies <- read_html(url)
+top_movies
+```
+```{r}
+top_movies %>%
+  html_nodes("div#sis_pixel")
+```
+
+
 
 
 

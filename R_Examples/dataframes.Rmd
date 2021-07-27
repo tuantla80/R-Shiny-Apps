@@ -73,7 +73,9 @@ str(df)  # structure of df
 names(df)  # === list(df.columns) in pandas
 ```
 ```{r}
-rownames(df)   # like df.index in pandas
+# For example having a df with a column name "marker"
+row.names(df) <- df$marker # set "marker" as a index column in Pandas
+df <- subset(df, select = -c(marker)) # drop the "marker" column since it has been use for index
 ```
 ```{r}
 nameVetor = sapply(df, class)  # apply a function (here is class) for each columns

@@ -11,6 +11,8 @@
   > install.packages("shinythemes")  
   > install.packages("ggplot2")  
   > install.packages('DT')  
+  > install.packages('mongolite')
+  > install.packages('heatmaply')
   > install.packages("plotly")  
   > install.packages("dash") 
 ### 2. Deploy apps  

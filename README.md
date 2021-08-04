@@ -17,7 +17,7 @@
   > install.packages('heatmaply')  
   > install.packages("plotly")  
   > install.packages("dash")   
-  > install.packages("devtools")
+  > install.packages("devtools")  
   > install_github("StatsWithR/statsr")
 ### 2. Deploy apps  
 #### 2.1. Shinyapps.io  

@@ -17,7 +17,6 @@ R_Examples/SimpleShiny/
 R_Examples/WHData-2018.csv
 R_Examples/facs.Rmd
 R_Examples/heatmap_demo1.Rmd
-R_Examples/mongolite.ipynb
 R_Examples/output_files_practice/
 R_Examples/restaurant.csv
 Textbox_demo1/
@@ -26,7 +25,8 @@ dropdown_mult_cols_1/
 heatmap_checkbox_30072021/
 shinyfacsheatmap/
 R_Examples/data_viz.Rmd
-
+R_Examples/df_markers.csv
+R_Examples/C1_intro_to_r_Coursera.Rmd
 
 .Rproj.user
 R_Examples/.RData

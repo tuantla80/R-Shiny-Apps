@@ -8,13 +8,18 @@
   At R session > install.packages("shiny")  
 - Install shinythemes, ggplot2, DT (DataTable), plotly 
   At R session  
+  > install.packages("shiny")
   > install.packages("shinythemes")  
   > install.packages("ggplot2")  
+  > install.packages("dplyr")
   > install.packages('DT')  
   > install.packages('mongolite')  
   > install.packages('heatmaply')  
   > install.packages("plotly")  
-  > install.packages("dash") 
+  > install.packages("dash")   
+  > install.packages("devtools")  
+  > install_github("StatsWithR/statsr")  
+- [<b>R code example</b>](https://github.com/tuantla80/R-Shiny-Apps/tree/main/R_Examples)
 ### 2. Deploy apps  
 #### 2.1. Shinyapps.io  
 - Step 1. Access and sign-up to https://www.shinyapps.io/  

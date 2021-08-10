@@ -19,7 +19,7 @@
   > install.packages("dash")   
   > install.packages("devtools")  
   > install_github("StatsWithR/statsr")  
-### [<b>Useful R code examples in Jupyternotebook</b>](https://github.com/tuantla80/R-Shiny-Apps/tree/main/R_Examples)
+### [My R code examples in Jupyternotebook](https://github.com/tuantla80/R-Shiny-Apps/tree/main/R_Examples)
 ### 2. Deploy apps  
 #### 2.1. Shinyapps.io  
 - Step 1. Access and sign-up to https://www.shinyapps.io/  

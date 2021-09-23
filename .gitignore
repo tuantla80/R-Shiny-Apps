@@ -4,26 +4,12 @@
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
 # test files
-# test/
+TEST/
 
 Heatmap_demo_1/
 Heatmap_demo_2/
 R_Examples/.ipynb_checkpoints/
 R_Examples/*.csv
-R_Examples/R_Shiny.Rmd
-R_Examples/Rplot001.jpg
-R_Examples/SimpleShiny/
-R_Examples/facs.Rmd
-R_Examples/heatmap_demo1.Rmd
-R_Examples/output_files_practice/
-R_Examples/data_viz.Rmd
-R_Examples/C1_intro_to_r_Coursera.Rmd
-
-Textbox_demo1/
-checkbox_select_desect_ALL/
-dropdown_mult_cols_1/
-heatmap_checkbox_30072021/
-shinyfacsheatmap/
 
 .Rproj.user
 R_Examples/.RData
@@ -42,19 +28,4 @@ R_Examples/.Rhistory
 # JetBrains IDE
 .idea/
 
-# Unit test reports
-TEST*.xml
-
-# Applications
-*.app
-*.exe
-*.war
-
-# Large media files
-*.mp4
-*.tiff
-*.avi
-*.flv
-*.mov
-*.wmv
 

@@ -5,6 +5,11 @@
 
 # test files
 TEST/
+R workshops/.ipynb_checkpoints
+R workshops/.Rproj.user
+R workshops/.Rhistory
+R workshops/*.png
+R workshops/*.Rproj
 
 Heatmap_demo_1/
 Heatmap_demo_2/

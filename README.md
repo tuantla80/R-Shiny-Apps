@@ -71,4 +71,4 @@ At console run:
     success: Stopping old instances
   Application successfully deployed to https://r-apps-at-apf.shinyapps.io/app_01_mining_stock/
   ```  
-Now we can access at: https://r-apps-at-apf.shinyapps.io/app_01_mining_stock/   
+Now we can access the app the the above address. 
